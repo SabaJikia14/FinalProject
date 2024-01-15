@@ -1,32 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import StarsCanvas from "@/components/main/StarBackground";
-import Navbar from "@/components/main/Navbar";
-import Footer from "@/components/main/Footer";
+import Encryption from "@/components/main/Encryption";
+import Hero from "@/components/main/Hero";
+import Projects from "@/components/main/Projects";
+import Skills from "@/components/main/Skills";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Space Portfolio",
-  description: "This is my portfolio",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Home() {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
-      >
-        <StarsCanvas />
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <main className="h-full w-full">
+      <div className="flex flex-col gap-20">
+        <Hero />
+        <Skills />
+        <Encryption />
+        <Projects />
+      </div>
+    </main>
   );
 }
